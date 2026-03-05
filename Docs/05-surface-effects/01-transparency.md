@@ -1,6 +1,6 @@
 # 01 — Transparency
 
-**Prerequisites:** [01 — Parallax & Triplanar Mapping](../04-advanced-texturing/01-parallax-triplanar.md) or any lit, textured shader.
+**Prerequisites:** [01 — Texturing](../03-texturing/01-texturing.md) or any lit shader with texture sampling.
 
 **Concepts:** Alpha blend, alpha clip, depth write, render queue, blend modes.
 
@@ -101,6 +101,30 @@ Transparent objects are drawn back-to-front by distance when possible. For compl
 
 ---
 
+### Step 6: Two-sided / double-sided
+
+For foliage, leaves, or thin surfaces, render both sides:
+
+```hlsl
+Cull Off
+```
+
+Use `Cull Off` in the alpha blend pass so back faces are visible. For alpha clip, `Cull Off` avoids disappearing when viewed from behind. For performance, prefer `Cull Back` when one-sided is enough.
+
+---
+
+### Step 7: Alpha-to-coverage (optional)
+
+For alpha-clip foliage, **alpha-to-coverage** converts alpha to coverage for multisample anti-aliasing (MSAA), reducing jagged edges:
+
+```hlsl
+AlphaToMask On
+```
+
+Requires MSAA enabled in URP Asset. The fragment alpha is used as a coverage mask; works best with soft alpha gradients near the cutoff.
+
+---
+
 ## Unity setup checklist
 
 - [ ] Texture has alpha channel (RGBA) for blend; or use a gradient/cutout texture.
@@ -114,6 +138,8 @@ Transparent objects are drawn back-to-front by distance when possible. For compl
 - `clip(x)` — discards fragment if x ≤ 0.
 - `ZWrite Off` — skip depth write for transparent objects.
 - `Blend SrcAlpha OneMinusSrcAlpha` — standard alpha blend.
+- `Cull Off` — render both sides (foliage, thin leaves).
+- `AlphaToMask On` — alpha-to-coverage for softer alpha-clip edges with MSAA.
 - Render queue controls draw order; Transparent is after Opaque.
 
 ---

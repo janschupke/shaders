@@ -127,4 +127,4 @@ Add a `_SpecularStrength` (Range 0–1) and multiply `specular` by it. This lets
 
 ## Next
 
-[01 — Texturing](../03-texturing/01-texturing.md) — UV mapping and texture sampling.
+[03 — Fog](03-fog.md) — Distance-based atmospheric fog.

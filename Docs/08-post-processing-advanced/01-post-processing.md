@@ -114,7 +114,30 @@ return half4(saturate(color), col.a);
 
 ---
 
-### Step 5: URP Volume framework (conceptual)
+### Step 5: Bloom (threshold + blur + add)
+
+Bloom extracts bright pixels, blurs them, and adds back for glow. Use HDR color buffer (URP: HDR enabled on camera).
+
+1. **Threshold pass** — extract pixels above a brightness threshold:
+   ```hlsl
+   half luminance = dot(col.rgb, half3(0.299, 0.587, 0.114));
+   half3 bloom = max(0, col.rgb - _BloomThreshold) * _BloomStrength;
+   ```
+
+2. **Blur** — use a separate pass with a 4-tap or 9-tap Gaussian. Sample offsets from `_BlurOffset` (e.g. 1/width, 1/height). Or use two passes: horizontal blur, then vertical.
+
+3. **Add** — combine original and bloom:
+   ```hlsl
+   return half4(col.rgb + bloom, col.a);
+   ```
+
+**Simplified single-pass:** Threshold in the fragment shader and add a soft glow by sampling neighbors with small offsets. For production, use URP's built-in Bloom or a multi-pass blur (downsample → blur → upsample).
+
+**Verify:** Emissive or bright areas glow. Requires HDR; adjust threshold and strength.
+
+---
+
+### Step 6: URP Volume framework (conceptual)
 
 URP's post-processing uses `Volume` components and `VolumeProfile` assets. Effects like Bloom, Color Adjustments, Vignette are implemented as `VolumeComponent` scripts and corresponding shaders. To add a custom effect, create a `VolumeComponent` and a `ScriptableRenderPass` that blits with your shader. Reference the URP Post-Processing package for the full pattern.
 
@@ -132,7 +155,8 @@ URP's post-processing uses `Volume` components and `VolumeProfile` assets. Effec
 
 - Full-screen pass: sample camera color, apply effect, output.
 - `smoothstep(a, b, x)` — smooth S-curve for vignette, transitions.
-- Bloom: threshold → blur → add. Tone mapping: HDR → LDR.
+- Bloom: threshold bright pixels → blur → add back. Requires HDR.
+- Tone mapping: HDR → LDR (e.g. `x / (x + 1)`).
 - URP: use `ScriptableRenderPass` and `RenderFeature` for custom post-processing.
 
 ---

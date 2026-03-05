@@ -1,6 +1,6 @@
 # 01 — Texturing
 
-**Prerequisites:** [02 — Specular Lighting](../02-basic-lighting/02-specular-lighting.md). You need a lit shader with diffuse and specular.
+**Prerequisites:** [03 — Fog](../02-basic-lighting/03-fog.md) or any lit shader. You need diffuse, specular, and world position.
 
 **Concepts:** UV coordinates, texture sampling, tiling, offset.
 
@@ -18,6 +18,7 @@
 
 - **Tiling** — floors, walls, terrain. Repeat a small texture to cover large areas without huge assets.
 - **Detail maps** — second texture at higher frequency for close-up detail (e.g. scratches on metal).
+- **Vertex colors** — foliage tinting, terrain painting, per-vertex variation. Multiply albedo by `COLOR` from the mesh.
 - **Alpha cutout** — foliage, grilles, chain-link fences. Use `clip()` for hard edges when you don't need soft transparency.
 
 ---
@@ -102,7 +103,32 @@ Or multiply the final alpha by `baseMap.a` if you later add transparency.
 
 ---
 
-### Step 5: Add a second texture (detail)
+### Step 5: Vertex colors (optional)
+
+Meshes can store per-vertex color in `COLOR`. Use it to tint the albedo:
+
+1. Add to `Attributes`:
+   ```hlsl
+   float4 color : COLOR;
+   ```
+
+2. Add to `Varyings`:
+   ```hlsl
+   float4 color : TEXCOORD4;
+   ```
+
+3. In the vertex shader: `OUT.color = IN.color;`
+
+4. In the fragment shader:
+   ```hlsl
+   half3 albedo = baseMap.rgb * _BaseColor.rgb * IN.color.rgb;
+   ```
+
+**Verify:** Paint vertex colors in a 3D tool (Blender, Maya) or use a terrain painter. The mesh tints by vertex color.
+
+---
+
+### Step 6: Add a second texture (detail)
 
 Add `_DetailMap` and `_DetailMap_ST`. Sample at scaled UVs (e.g. `IN.uv * 4`) and blend with albedo (e.g. multiply or overlay). This reinforces the tiling + sampling pattern.
 
@@ -110,7 +136,7 @@ Add `_DetailMap` and `_DetailMap_ST`. Sample at scaled UVs (e.g. `IN.uv * 4`) an
 
 ## Unity setup checklist
 
-- [ ] Mesh has UVs (built-in Cube, Sphere, Plane do).
+- [ ] Mesh has UVs (built-in Cube, Sphere, Plane do). For vertex colors: mesh must have a Color channel.
 - [ ] Texture import: sRGB for color maps, Repeat wrap mode for tiling.
 - [ ] Material has a texture assigned to Base Map.
 

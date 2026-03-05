@@ -19,6 +19,7 @@ A **normal map** stores perturbed surface normals in a texture. Lighting uses th
 - **Surface detail without geometry** — bricks, tiles, scratches, fabric weave. One quad can look like detailed relief.
 - **Characters** — wrinkles, pores, armor plates. Normal maps are standard in character pipelines.
 - **Environment art** — walls, props, terrain. Combine with tiling for efficient large surfaces.
+- **Detail normal** — second normal map at higher UV scale for close-up detail (scratches, wear). Blend with overlay.
 
 ---
 
@@ -116,6 +117,19 @@ Some meshes lack tangents. Use `#if defined(_NORMALMAP)` and fall back to `IN.no
 
 ---
 
+### Step 7: Detail normal map (optional)
+
+For close-up detail, blend a second normal map at higher frequency. Add `_DetailBumpMap`, `_DetailScale`, `_DetailBumpScale`:
+
+```hlsl
+half3 detailNormalTS = UnpackNormalScale(SAMPLE_TEXTURE2D(_DetailBumpMap, sampler_DetailBumpMap, IN.uv * _DetailScale), _DetailBumpScale);
+normalTS = normalize(normalTS + detailNormalTS - half3(0, 0, 1));  // Overlay blend
+```
+
+Then transform the blended normal to world space. Use `[Toggle(_DETAIL_NORMALMAP)]` to enable only when needed.
+
+---
+
 ## Unity setup checklist
 
 - [ ] Normal map texture: Import Settings → Texture Type = Normal map (or leave Default and ensure correct format).
@@ -135,4 +149,6 @@ Some meshes lack tangents. Use `#if defined(_NORMALMAP)` and fall back to `IN.no
 
 ## Next
 
-[01 — Parallax & Triplanar Mapping](../04-advanced-texturing/01-parallax-triplanar.md) — Height-based UV offset and UV-less projection.
+**Core path:** [01 — Transparency](../05-surface-effects/01-transparency.md) — Alpha blending and alpha clip.
+
+**Optional:** [01 — Parallax & Triplanar](../04-advanced-texturing/01-parallax-triplanar.md) — Height-based UV offset and UV-less projection.

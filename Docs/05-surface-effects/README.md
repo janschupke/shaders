@@ -1,6 +1,6 @@
 # 05 — Surface Effects
 
-**Prerequisites:** [04 — Advanced Texturing](../04-advanced-texturing/README.md)
+**Prerequisites:** [03 — Texturing](../03-texturing/README.md)
 
 **Complexity:** ★★★☆☆
 

@@ -102,6 +102,29 @@ For a full implementation, study URP's Lit shader or use `UniversalFragmentPBR`.
 
 ---
 
+### Step 6: Emissive
+
+**Emissive** adds self-illumination — glow that doesn't depend on lights. Add to Properties:
+
+```hlsl
+_EmissionColor ("Emission", Color) = (0, 0, 0, 1)
+_EmissionMap ("Emission Map", 2D) = "white" {}
+```
+
+For `SurfaceData`:
+
+```hlsl
+SurfaceData surfaceData;
+// ...
+surfaceData.emission = _EmissionColor.rgb * SAMPLE_TEXTURE2D(_EmissionMap, sampler_EmissionMap, uv).rgb;
+```
+
+**HDR:** Use HDR color for emission so values > 1 bloom; otherwise keep in [0,1]. Emissive is additive to the final color.
+
+**Verify:** Material glows in dark areas. Use for screens, lights, magic effects.
+
+---
+
 ## Unity setup checklist
 
 - [ ] URP Lit shader as reference for includes and structure.
@@ -115,6 +138,7 @@ For a full implementation, study URP's Lit shader or use `UniversalFragmentPBR`.
 - PBR: albedo, metallic, smoothness (or roughness).
 - Metals: no diffuse, tinted specular.
 - Dielectrics: diffuse + white/gray specular.
+- Emissive: self-illumination; add to `surfaceData.emission`; HDR for bloom.
 - URP `UniversalFragmentPBR` handles the full BRDF; use Lit as a base for custom PBR.
 
 ---

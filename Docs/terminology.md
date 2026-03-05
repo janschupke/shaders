@@ -48,6 +48,10 @@ Definitions of common terms used in the [study plan](study-plan.md). Math is exp
 
 **Fresnel** — View-dependent effect: surfaces reflect more at grazing angles. Used in PBR and rim lighting.
 
+**Emissive** — Self-illumination. Surfaces emit light regardless of scene lights. Used for screens, magic glow, HDR bloom sources.
+
+**Fog** — Distance-based atmospheric effect. Objects fade toward a fog color with distance. Linear or exponential falloff.
+
 ---
 
 ## Texturing
@@ -61,6 +65,10 @@ Definitions of common terms used in the [study plan](study-plan.md). Math is exp
 **Parallax** — Technique that offsets UVs using a height map to simulate depth. Creates stronger depth illusion than normal mapping alone.
 
 **Triplanar mapping** — Projects a texture from three axes (X, Y, Z) and blends. Avoids UV seams on procedural or complex geometry.
+
+**Vertex color** — Per-vertex color stored in the mesh (COLOR attribute). Used in shaders to tint albedo (e.g. foliage, terrain painting).
+
+**Detail map** — Second texture at higher UV scale for close-up detail. Blend with base albedo (multiply/overlay). **Detail normal** blends a second normal map for fine surface detail.
 
 ---
 
@@ -76,6 +84,8 @@ Definitions of common terms used in the [study plan](study-plan.md). Math is exp
 
 **Render queue** — Order in which objects are drawn. Opaque first, then transparent, to handle blending correctly.
 
+**Alpha-to-coverage** — Converts alpha to MSAA coverage mask. Reduces jagged edges on alpha-clip foliage.
+
 ---
 
 ## Effects
@@ -87,6 +97,8 @@ Definitions of common terms used in the [study plan](study-plan.md). Math is exp
 **Dissolve** — Effect where a surface appears to burn or dissolve away, often driven by a noise texture and clip.
 
 **Stencil buffer** — Per-pixel mask. Can mark pixels (e.g. for outlines) or restrict rendering to certain areas.
+
+**Bloom** — Post-processing effect that extracts bright pixels, blurs them, and adds back. Creates glow around emissive or bright areas. Requires HDR.
 
 ---
 
