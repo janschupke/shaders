@@ -1,0 +1,28 @@
+---
+description: Unity 3D, URP, and shaders learning sandbox context
+alwaysApply: true
+---
+
+# Shaders Sandbox Project
+
+This project is a **learning sandbox for 3D graphics programming, Unity, and shader development**. Focus is on **code-centric shader study**—writing `.shader`, `.hlsl`, and `.cginc` files—not Unity Shader Graph.
+
+## Tech Stack
+
+- **Unity 6** (URP)
+- **Universal Render Pipeline (URP)** – forward rendering, SRP Batcher, Shader Library
+- **HLSL** – shader language (Unity’s ShaderLab wraps HLSL)
+
+## Project Intent
+
+- Experiment with vertex/fragment shaders, lighting, and effects
+- Learn URP’s shader structure and built-in functions
+- Study 3D math (vectors, matrices, coordinate spaces) in practice
+- Reference: [Unity Shader documentation](https://docs.unity3d.com/Manual/SL-Reference.html), [URP Shader Library](https://github.com/Unity-Technologies/Graphics/tree/master/Packages/com.unity.render-pipelines.universal/ShaderLibrary)
+
+## Conventions
+
+- **Code-centric**: Prefer hand-written shaders over Shader Graph
+- **URP shaders**: Use `UniversalRenderPipeline` tag, `Core.hlsl`, `Lighting.hlsl`, URP’s `Input.hlsl` structs
+- **Naming**: `*Shader.shader`, `*Pass.hlsl`, shared code in `.cginc` or `.hlsl`
+- **Structure**: Co-locate shaders, materials, and test scenes by topic (e.g. `Assets/Shaders/Lighting/`, `Assets/Shaders/Effects/`)

@@ -1,0 +1,15 @@
+---
+description: Shader code patterns for Unity URP
+globs: "**/*.shader,**/*.hlsl,**/*.cginc"
+alwaysApply: false
+---
+
+# Shader Code (URP)
+
+When writing shaders for this project:
+
+- **ShaderLab**: Use `Shader "Universal Render Pipeline/..."` or custom URP-compatible structure
+- **HLSL**: Include `Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl` and lighting includes as needed
+- **URP lighting**: Use `GetMainLight()`, `GetAdditionalLights()`, `LightingLambert()` / `LightingBlinnPhong()` from URP’s `Lighting.hlsl`
+- **Precision**: Prefer `half` for colors/vectors, `float` for positions; avoid `fixed` (legacy)
+- **Vertex/fragment**: Use `Varyings` struct, `Vertex` and `Fragment` functions; keep fragment work minimal

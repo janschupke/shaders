@@ -1,0 +1,79 @@
+# Unity Git LFS - binary assets
+# https://docs.unity3d.com/Manual/UnityVersionControl.html
+
+# Macro for Unity YAML-based asset files
+[attr]unityyaml -text merge=unityyamlmerge diff
+
+# Macro for LFS-tracked binary files
+[attr]lfs -text filter=lfs diff=lfs merge=lfs
+
+* text=auto
+
+# Code
+*.cs text diff=csharp
+
+# Unity text assets (YAML)
+*.meta unityyaml
+*.unity unityyaml
+*.asset unityyaml
+*.prefab unityyaml
+*.mat unityyaml
+*.anim unityyaml
+*.controller unityyaml
+*.overrideController unityyaml
+*.physicMaterial unityyaml
+*.physicsMaterial2D unityyaml
+*.playable unityyaml
+*.mask unityyaml
+*.brush unityyaml
+*.flare unityyaml
+*.fontsettings unityyaml
+*.guiskin unityyaml
+*.giparams unityyaml
+*.renderTexture unityyaml
+*.spriteatlas unityyaml
+*.terrainlayer unityyaml
+*.mixer unityyaml
+*.shadervariants unityyaml
+*.preset unityyaml
+*.asmdef -text diff
+
+# Unity binary assets
+*.cubemap lfs
+*-[Tt]errain.asset -unityyaml lfs
+*-[Nn]av[Mm]esh.asset -unityyaml lfs
+
+# Images / Textures
+*.jpg lfs
+*.jpeg lfs
+*.png lfs
+*.gif lfs
+*.bmp lfs
+*.exr lfs
+*.tga lfs
+*.tiff lfs
+*.tif lfs
+*.dds lfs
+*.psd lfs
+*.webp lfs
+*.svg lfs
+
+# Audio
+*.mp3 lfs
+*.ogg lfs
+*.wav lfs
+*.aiff lfs
+*.aif lfs
+
+# 3D models
+*.fbx lfs
+*.obj lfs
+*.blend lfs
+*.blender lfs
+*.dae lfs
+*.glb lfs
+*.gltf lfs
+
+# Fonts
+*.otf lfs
+*.ttf lfs
