@@ -1,6 +1,6 @@
 # Shader Terminology
 
-Definitions of common terms used in the [study plan](study-plan.md).
+Definitions of common terms used in the [study plan](study-plan.md). Math is explained in-place in the numbered documents; this file provides quick reference. Math is explained in-place in the numbered documents; this file provides quick reference.
 
 ---
 
@@ -113,3 +113,13 @@ Definitions of common terms used in the [study plan](study-plan.md).
 **URP** (Universal Render Pipeline) — Unity’s scalable forward renderer. Replaces the Built-in pipeline.
 
 **Forward rendering** — Renders each object with all lights in one or few passes. Contrast with deferred, which separates geometry and lighting.
+
+---
+
+## Shadows & environment
+
+**Shadow map** — Depth texture from the light's perspective. Fragments compare their depth in light space to the map; if behind, they're in shadow.
+
+**Cubemap** — Six-faced texture (+X,-X,+Y,-Y,+Z,-Z) for environment sampling. Used for reflections and skybox.
+
+**Reflection probe** — Captures the scene into a cubemap for reflections. Unity's `unity_SpecCube0` holds the active probe.

@@ -1,6 +1,6 @@
-# 08 — Toon / Cel Shading
+# 09 — Toon / Cel Shading
 
-**Prerequisites:** [07 — Fresnel & Rim](07-fresnel-rim.md) or any lit shader.
+**Prerequisites:** [08 — Fresnel & Rim](08-fresnel-rim.md) or any lit shader.
 
 **Concepts:** Banded lighting, step/floor functions, toon shading.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 **Toon** (cel) shading replaces smooth lighting gradients with discrete bands. Instead of N·L varying continuously, use `floor(NdotL * _Bands) / _Bands` or `step(threshold, NdotL)` to create sharp transitions. This gives a cartoon or comic look.
+
+**Math:** `floor(x * n) / n` quantizes x into n equal steps. `step(a, x)` returns 0 if x < a, else 1 — a binary threshold. `smoothstep(a, b, x)` gives a smooth S-curve between a and b.
 
 ---
 
@@ -111,4 +113,4 @@ Or use multiple smoothsteps for each band transition.
 
 ## Next
 
-[09 — Dissolve](09-dissolve.md) — Clip-based dissolve effect.
+[10 — Dissolve](10-dissolve.md) — Clip-based dissolve effect.

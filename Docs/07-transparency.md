@@ -1,6 +1,6 @@
-# 06 — Transparency
+# 07 — Transparency
 
-**Prerequisites:** [05 — Normal Mapping](05-normal-mapping.md) or any lit, textured shader.
+**Prerequisites:** [06 — Parallax & Triplanar](06-parallax-triplanar.md) or any lit, textured shader.
 
 **Concepts:** Alpha blend, alpha clip, depth write, render queue, blend modes.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 **Alpha clip** discards fragments below a threshold — hard edges, no blending. **Alpha blend** combines the fragment color with the framebuffer using the alpha channel — soft transparency. Transparency requires correct **render queue** (draw after opaque) and often **depth write off** so transparent objects don't occlude each other incorrectly. Blend mode (e.g. `SrcAlpha OneMinusSrcAlpha`) controls how colors combine.
+
+**Math:** `final = src * src.a + dst * (1 - src.a)`. The source (fragment) and destination (framebuffer) are blended; alpha weights the contribution.
 
 ---
 
@@ -110,4 +112,4 @@ Transparent objects are drawn back-to-front by distance when possible. For compl
 
 ## Next
 
-[07 — Fresnel & Rim](07-fresnel-rim.md) — View-dependent edge lighting.
+[08 — Fresnel & Rim](08-fresnel-rim.md) — View-dependent edge lighting.

@@ -1,4 +1,4 @@
-# 11 — UV Animation
+# 12 — UV Animation
 
 **Prerequisites:** [04 — Texturing](04-texturing.md). You need UVs and texture sampling.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 **UV animation** changes texture coordinates over time. **Scrolling** adds a time-based offset so the texture moves (water, conveyor belts). **Rotation** spins the UVs around a pivot. Both are done in the vertex shader (or fragment) by modifying the UV before sampling.
+
+**Math (rotation):** Rotate 2D point (x,y) by angle θ: `x' = x*cos(θ) - y*sin(θ)`, `y' = x*sin(θ) + y*cos(θ)`. Translate to pivot, rotate, translate back.
 
 ---
 
@@ -108,4 +110,4 @@ OUT.uv = IN.uv + uvOffset;
 
 ## Next
 
-[12 — PBR](12-pbr.md) — Physically based rendering.
+[13 — PBR](13-pbr.md) — Physically based rendering.

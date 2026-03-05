@@ -10,6 +10,8 @@
 
 **Diffuse** lighting models how matte surfaces scatter light. The **Lambert** model: brightness ∝ max(0, **N**·**L**) — the dot product of the surface normal and light direction. Surfaces facing the light are bright; surfaces facing away are dark. URP provides `GetMainLight()` and `LightingLambert()` to implement this.
 
+**Math:** `N·L = dot(N, L)` = cos(θ) when N and L are unit vectors. θ = 0° (surface faces light) → N·L = 1 (brightest). θ = 90° → N·L = 0. θ > 90° → N·L < 0, so we clamp with `max(0, N·L)` or `saturate(N·L)`.
+
 ---
 
 ## Implementation steps
@@ -50,7 +52,7 @@ Diffuse lighting gives light contribution. Multiply by the surface color (albedo
 2. In the fragment shader:
    ```hlsl
    half3 albedo = _BaseColor.rgb;
-   half3 diffuse = LightingLambert(mainLight.color, mainLight.direction, inputData.normalWS);
+   half3 diffuse = LightingLambert(mainLight.color, mainLight.direction, normalWS);
    half3 color = albedo * diffuse;
    return half4(color, 1);
    ```
@@ -77,7 +79,7 @@ half3 color = albedo * (diffuse + ambient);
 Half-Lambert remaps N·L from [0,1] to [0.5,1] for a softer look:
 
 ```hlsl
-half NdotL = saturate(dot(inputData.normalWS, mainLight.direction));
+half NdotL = saturate(dot(normalWS, mainLight.direction));
 half halfLambert = NdotL * 0.5 + 0.5;
 half3 diffuse = mainLight.color * halfLambert;
 ```

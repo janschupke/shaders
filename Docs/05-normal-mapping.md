@@ -10,6 +10,8 @@
 
 A **normal map** stores perturbed surface normals in a texture. Lighting uses these instead of the geometric normal to fake detail without extra geometry. Normals are usually in **tangent space**; you convert them to world space using the **TBN matrix** (Tangent, Bitangent, Normal). URP provides `TransformTangentToWorld` and `UnpackNormalScale` for this.
 
+**Math:** Bitangent B = cross(N, T) * sign. The TBN matrix has rows [T, B, N]; transforming a tangent-space vector v to world space: `vWorld = v.x*T + v.y*B + v.z*N` = `mul(v, TBN)`.
+
 ---
 
 ## Implementation steps
@@ -125,4 +127,4 @@ Some meshes lack tangents. Use `#if defined(_NORMALMAP)` and fall back to `IN.no
 
 ## Next
 
-[06 — Transparency](06-transparency.md) — Alpha blending and alpha clip.
+[06 — Parallax & Triplanar](06-parallax-triplanar.md) — Height-based UV offset and UV-less projection.

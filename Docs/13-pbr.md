@@ -1,6 +1,6 @@
-# 12 — Physically Based Rendering (PBR)
+# 13 — Physically Based Rendering (PBR)
 
-**Prerequisites:** [05 — Normal Mapping](05-normal-mapping.md), [07 — Fresnel & Rim](07-fresnel-rim.md). You need normals, view direction, and lighting basics.
+**Prerequisites:** [05 — Normal Mapping](05-normal-mapping.md), [08 — Fresnel & Rim](08-fresnel-rim.md). You need normals, view direction, and lighting basics.
 
 **Concepts:** Metallic-roughness workflow, energy conservation, BRDF, URP PBR functions.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 **PBR** uses measured material properties for realistic lighting. The **metallic-roughness** workflow: **albedo** (base color), **metallic** (0 = dielectric, 1 = metal), **roughness** (0 = mirror, 1 = diffuse). The BRDF combines diffuse and specular with energy conservation. URP provides `LightingPhysicallyBased` and related functions.
+
+**Math:** Energy conservation: diffuse + specular ≤ 1. Fresnel-Schlick: `F = F0 + (1-F0)(1-cos θ)^5`. Cook-Torrance specular uses microfacet distribution (GGX) and geometry term. Metals: F0 = albedo, no diffuse. Dielectrics: F0 ≈ 0.04.
 
 ---
 
@@ -111,4 +113,4 @@ For a full implementation, study URP's Lit shader or use `UniversalFragmentPBR`.
 
 ## Next
 
-[13 — Advanced](13-advanced.md) — Multi-pass, stencil, instancing, variants.
+[14 — Shadows](14-shadows.md) — Receive shadows from lights.

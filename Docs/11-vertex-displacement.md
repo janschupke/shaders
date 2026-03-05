@@ -1,4 +1,4 @@
-# 10 — Vertex Displacement
+# 11 — Vertex Displacement
 
 **Prerequisites:** [01 — Fundamentals](01-fundamentals.md). You need vertex shader access to positions and normals.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 The **vertex shader** can modify vertex positions before rasterization. Moving vertices creates waves, wobble, or deformation. Use **object space** or **world space** for consistent behavior. Common patterns: sine waves, noise-based displacement, and time-based animation using `_Time`.
+
+**Math:** `sin(x)` oscillates in [-1, 1]. `sin(freq * pos + time)` gives a traveling wave. Finite-difference normal: for height h(x,z), approximate `normal ≈ (-∂h/∂x, 1, -∂h/∂z)` using `(h(x+ε)-h(x-ε))/(2ε)`.
 
 ---
 
@@ -113,4 +115,4 @@ Add `_HeightMap` (2D) and `_HeightMap_ST` to Properties and CBUFFER. `SAMPLE_TEX
 
 ## Next
 
-[11 — UV Animation](11-uv-animation.md) — Animate UVs for scrolling textures.
+[12 — UV Animation](12-uv-animation.md) — Animate UVs for scrolling textures.

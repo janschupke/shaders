@@ -1,6 +1,6 @@
-# 07 — Fresnel & Rim Lighting
+# 08 — Fresnel & Rim Lighting
 
-**Prerequisites:** [06 — Transparency](06-transparency.md) or any lit shader with view direction.
+**Prerequisites:** [07 — Transparency](07-transparency.md) or any lit shader with view direction.
 
 **Concepts:** Fresnel effect, view-dependent falloff, rim lighting.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 The **Fresnel** effect describes how surfaces reflect more at grazing angles (edges) than when viewed head-on. **Rim lighting** uses this to brighten edges, separating objects from the background. The core term is `1 - max(0, N·V)` — stronger when the view direction V is perpendicular to the normal N (grazing angle).
+
+**Math:** N·V = cos(θ) where θ is the angle between normal and view. At the center of a sphere, N ‖ V → N·V = 1 → fresnel = 0. At the rim, N ⊥ V → N·V = 0 → fresnel = 1. `pow(1 - NdotV, p)` sharpens the falloff; higher p = narrower rim.
 
 ---
 
@@ -107,4 +109,4 @@ For transparent materials, add the rim to the final color before applying alpha.
 
 ## Next
 
-[08 — Toon / Cel Shading](08-toon-cel-shading.md) — Stylized banded lighting.
+[09 — Toon / Cel Shading](09-toon-cel-shading.md) — Stylized banded lighting.

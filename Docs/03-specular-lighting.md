@@ -10,6 +10,8 @@
 
 **Specular** lighting creates highlights where the surface reflects the light toward the viewer. **Blinn-Phong** uses the **halfway vector** H = normalize(L + V). The specular term is (N·H)^shininess — higher shininess = tighter highlight. URP provides `LightingBlinnPhong` and supports multiple lights.
 
+**Math:** H is the vector halfway between light and view. When H aligns with N, the surface reflects light toward the camera → highlight. `(N·H)^p` with large p gives a sharp peak; small p gives a broad highlight.
+
 ---
 
 ## Implementation steps
@@ -59,14 +61,24 @@ uint pixelLightCount = GetAdditionalLightsCount();
 for (uint i = 0; i < pixelLightCount; i++)
 {
     Light light = GetAdditionalLight(i, IN.positionWS);
-    half3 addDiffuse = LightingLambert(light.color, light.direction, inputData.normalWS);
+    half3 addDiffuse = LightingLambert(light.color, light.direction, normalWS);
     half3 addSpecular = LightingBlinnPhong(light.color, light.direction,
-        inputData.normalWS, inputData.viewDirectionWS, _SpecColor, _Shininess);
+        normalWS, viewDirWS, _SpecColor, _Shininess);
     color += albedo * addDiffuse * light.distanceAttenuation + addSpecular * light.distanceAttenuation;
 }
 ```
 
 5. Add a second light (Point or Spot) in the scene. **Verify:** Both lights contribute.
+
+---
+
+### Step 3b: Point and spot light attenuation (math)
+
+**Point lights** fade with distance. URP's `GetAdditionalLight` returns `distanceAttenuation` (0–1) and `shadowAttenuation`. The attenuation curve is typically: `1 / (1 + k·d²)` or similar — inverse-square falloff with a constant to avoid singularity at d=0.
+
+**Spot lights** add an angular falloff: light is full strength inside the inner cone, fades to 0 at the outer cone. `dot(lightDir, spotDirection)` gives the angle; a smoothstep remaps the cone angles to attenuation.
+
+You don't implement this manually — `light.distanceAttenuation` and `light.direction` already encode it. Just multiply your diffuse and specular by `light.distanceAttenuation` so point/spot lights correctly fade with distance and angle.
 
 ---
 

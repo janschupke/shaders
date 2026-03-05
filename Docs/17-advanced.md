@@ -1,6 +1,6 @@
-# 13 — Advanced Topics
+# 17 — Advanced Topics
 
-**Prerequisites:** [12 — PBR](12-pbr.md) or any prior shader. Each subsection can be tackled independently.
+**Prerequisites:** [14 — Shadows](14-shadows.md), [15 — Cubemaps](15-cubemaps-environment.md), [16 — Post-Processing](16-post-processing.md) or any prior shader. Each subsection can be tackled independently.
 
 **Concepts:** Multi-pass, stencil buffer, GPU instancing, shader variants.
 
@@ -97,7 +97,7 @@ Multiple **Pass** blocks run in sequence. The **stencil buffer** stores a per-pi
 
 5. **Multi_compile** for things that must always be present (e.g. fog, light count):
    ```hlsl
-   #pragma multi_compile _ _MAIN_LIGHT_SHADOWS
+   #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE
    ```
 
 ---

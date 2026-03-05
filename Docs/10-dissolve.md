@@ -1,6 +1,6 @@
-# 09 — Dissolve
+# 10 — Dissolve
 
-**Prerequisites:** [08 — Toon / Cel Shading](08-toon-cel-shading.md) or any shader with texture sampling.
+**Prerequisites:** [09 — Toon / Cel Shading](09-toon-cel-shading.md) or any shader with texture sampling.
 
 **Concepts:** Clip/discard, noise textures, animated cutout, burn edge.
 
@@ -9,6 +9,8 @@
 ## What you'll learn
 
 A **dissolve** effect makes a surface appear to burn or disintegrate. A **noise texture** (or procedural noise) drives a threshold: fragments below the threshold are discarded with `clip()`. Animating the threshold over time creates the dissolve. A **burn edge** — a bright line at the cutoff — adds a glowing border.
+
+**Math:** `lerp(a, b, t) = a + (b - a) * t` blends between colors. For the burn edge, `edge = saturate((noise - _Dissolve) / _BurnWidth)` gives 0 at the cutoff, 1 beyond the width — use to lerp from burn color to albedo.
 
 ---
 
@@ -105,4 +107,4 @@ half noise = SAMPLE_TEXTURE2D(_NoiseMap, sampler_NoiseMap, noiseUV).r;
 
 ## Next
 
-[10 — Vertex Displacement](10-vertex-displacement.md) — Animate vertices in the vertex shader.
+[11 — Vertex Displacement](11-vertex-displacement.md) — Animate vertices in the vertex shader.

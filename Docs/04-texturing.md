@@ -8,7 +8,9 @@
 
 ## What you'll learn
 
-**UV coordinates** map a 2D texture onto a 3D surface. The vertex shader passes UVs via varyings; the fragment shader samples the texture with `tex2D` (or `SAMPLE_TEXTURE2D` in URP). **Tiling** repeats the texture; **offset** shifts the origin. The albedo (base color) comes from the texture instead of a solid color.
+**UV coordinates** map a 2D texture onto a 3D surface. The vertex shader passes UVs via varyings; the fragment shader samples the texture with `SAMPLE_TEXTURE2D` in URP. **Tiling** repeats the texture; **offset** shifts the origin. The albedo (base color) comes from the texture instead of a solid color.
+
+**Math:** UV transform: `uv' = uv * scale + offset`. `_BaseMap_ST.xy` = scale (tiling), `_BaseMap_ST.zw` = offset.
 
 ---
 
