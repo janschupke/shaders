@@ -1,6 +1,6 @@
-# 11 — Vertex Displacement
+# 01 — Vertex Displacement
 
-**Prerequisites:** [01 — Fundamentals](01-fundamentals.md). You need vertex shader access to positions and normals.
+**Prerequisites:** [01 — Fundamentals](../01-fundamentals/01-fundamentals.md). You need vertex shader access to positions and normals.
 
 **Concepts:** Vertex shader position modification, procedural motion, sine waves, noise.
 
@@ -115,4 +115,4 @@ Add `_HeightMap` (2D) and `_HeightMap_ST` to Properties and CBUFFER. `SAMPLE_TEX
 
 ## Next
 
-[12 — UV Animation](12-uv-animation.md) — Animate UVs for scrolling textures.
+[02 — UV Animation](02-uv-animation.md) — Animate UVs for scrolling textures.

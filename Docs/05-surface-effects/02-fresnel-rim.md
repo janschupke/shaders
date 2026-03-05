@@ -1,6 +1,6 @@
-# 08 — Fresnel & Rim Lighting
+# 02 — Fresnel & Rim Lighting
 
-**Prerequisites:** [07 — Transparency](07-transparency.md) or any lit shader with view direction.
+**Prerequisites:** [01 — Transparency](01-transparency.md) or any lit shader with view direction.
 
 **Concepts:** Fresnel effect, view-dependent falloff, rim lighting.
 
@@ -109,4 +109,4 @@ For transparent materials, add the rim to the final color before applying alpha.
 
 ## Next
 
-[09 — Toon / Cel Shading](09-toon-cel-shading.md) — Stylized banded lighting.
+[03 — Toon / Cel Shading](03-toon-cel-shading.md) — Stylized banded lighting.

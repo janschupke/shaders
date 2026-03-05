@@ -1,6 +1,6 @@
-# 04 — Texturing
+# 01 — Texturing
 
-**Prerequisites:** [03 — Specular Lighting](03-specular-lighting.md). You need a lit shader with diffuse and specular.
+**Prerequisites:** [02 — Specular Lighting](../02-basic-lighting/02-specular-lighting.md). You need a lit shader with diffuse and specular.
 
 **Concepts:** UV coordinates, texture sampling, tiling, offset.
 
@@ -119,4 +119,4 @@ Add `_DetailMap` and `_DetailMap_ST`. Sample at scaled UVs (e.g. `IN.uv * 4`) an
 
 ## Next
 
-[05 — Normal Mapping](05-normal-mapping.md) — Add surface detail with normal maps.
+[02 — Normal Mapping](02-normal-mapping.md) — Add surface detail with normal maps.

@@ -1,6 +1,6 @@
 # Shader Terminology
 
-Definitions of common terms used in the [study plan](study-plan.md). Math is explained in-place in the numbered documents; this file provides quick reference. Math is explained in-place in the numbered documents; this file provides quick reference.
+Definitions of common terms used in the [study plan](study-plan.md). Math is explained in-place in the module steps; this file provides quick reference.
 
 ---
 

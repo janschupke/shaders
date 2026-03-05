@@ -1,64 +1,79 @@
 # Shader Study Plan
 
-A structured learning path for shader programming in **3D games and simulations**. Each document is self-contained with explanations, implementation steps, math in-place, and Unity setup. Steps build on each other within and across documents.
+A modular learning path for shader programming in **3D games and simulations**. Modules build on each other; complexity increases across the path. Each document is self-contained with explanations, implementation steps, math in-place, and Unity setup.
 
 **Approach:** Code-centric HLSL/ShaderLab (not Shader Graph).
 
 ---
 
-## Numbered documents
+## Module overview
 
-| # | Document | Prerequisites | Topics |
-|---|----------|---------------|--------|
-| 01 | [01 — Fundamentals](01-fundamentals.md) | None | Pipeline, ShaderLab, HLSL, coordinate spaces, 3D math, debugging |
-| 02 | [02 — Diffuse Lighting](02-diffuse-lighting.md) | 01 | Lambert, N·L, URP lighting |
-| 03 | [03 — Specular Lighting](03-specular-lighting.md) | 02 | Blinn-Phong, point/spot attenuation |
-| 04 | [04 — Texturing](04-texturing.md) | 03 | UV mapping, sampling, tiling, offset |
-| 05 | [05 — Normal Mapping](05-normal-mapping.md) | 04 | TBN, tangent-space normals |
-| 06 | [06 — Parallax & Triplanar](06-parallax-triplanar.md) | 05 | Height-based UV offset, UV-less projection |
-| 07 | [07 — Transparency](07-transparency.md) | 06 | Alpha blend, alpha clip, depth, queue |
-| 08 | [08 — Fresnel & Rim](08-fresnel-rim.md) | 07 | View-dependent edge lighting |
-| 09 | [09 — Toon / Cel Shading](09-toon-cel-shading.md) | 08 | Banded lighting, outline |
-| 10 | [10 — Dissolve](10-dissolve.md) | 09 | Clip, noise, burn edge |
-| 11 | [11 — Vertex Displacement](11-vertex-displacement.md) | 01 | Procedural deformation, waves |
-| 12 | [12 — UV Animation](12-uv-animation.md) | 04 | Scrolling, rotation, flow |
-| 13 | [13 — PBR](13-pbr.md) | 05, 08 | Metallic-roughness, BRDF |
-| 14 | [14 — Shadows](14-shadows.md) | 13 | Shadow mapping, shadow attenuation |
-| 15 | [15 — Cubemaps & Environment](15-cubemaps-environment.md) | 13 | Reflections, environment sampling, skybox |
-| 16 | [16 — Post-Processing](16-post-processing.md) | 01 | Blit, full-screen effects |
-| 17 | [17 — Advanced](17-advanced.md) | 14–16 | Multi-pass, stencil, instancing, variants |
+| # | Topic | Prerequisites | Complexity | Documents |
+|---|-------|--------------|------------|-----------|
+| 01 | [Fundamentals](01-fundamentals/README.md) | None | ★☆☆☆☆ | 01 |
+| 02 | [Basic Lighting](02-basic-lighting/README.md) | 01 | ★★☆☆☆ | 01, 02 |
+| 03 | [Texturing](03-texturing/README.md) | 02 | ★★☆☆☆ | 01, 02 |
+| 04 | [Advanced Texturing](04-advanced-texturing/README.md) | 03 | ★★★☆☆ | 01 |
+| 05 | [Surface Effects](05-surface-effects/README.md) | 04 | ★★★☆☆ | 01, 02, 03, 04 |
+| 06 | [Animation](06-animation/README.md) | 01, 03 | ★★★☆☆ | 01, 02 |
+| 07 | [Production Rendering](07-production-rendering/README.md) | 03, 05 | ★★★★☆ | 01, 02, 03 |
+| 08 | [Post-Processing & Advanced](08-post-processing-advanced/README.md) | 01, 07 | ★★★★★ | 01, 02 |
 
 ---
 
-## Suggested order
+## Module dependency graph
 
-**Core path (builds sequentially):**
-
-1. **01** → **02** → **03** → **04** → **05** — Fundamentals through normal mapping  
-2. **06** → **07** → **08** → **09** → **10** — Parallax, transparency, surface effects  
-3. **13** — PBR (after 05, 08)  
-4. **14** → **15** — Shadows, cubemaps  
-5. **17** — Advanced (as needed)
-
-**Parallel (can be done earlier):**
-
-- **11** — Vertex displacement (after 01)  
-- **12** — UV animation (after 04)  
-- **16** — Post-processing (after 01)
+```
+01 (Fundamentals)
+    │
+    ├──► 02 (Basic Lighting)
+    │         │
+    │         └──► 03 (Texturing)
+    │                   │
+    │                   ├──► 04 (Advanced Texturing)
+    │                   │         │
+    │                   │         └──► 05 (Surface Effects)
+    │                   │                   │
+    │                   ├──► 06 (Animation)  ◄── 01
+    │                   │
+    │                   └──► 07 (Production Rendering)  ◄── 05
+    │                             │
+    └──► 08 (Post-Processing & Advanced)  ◄── 07
+```
 
 ---
 
-## Document structure
+## Learning paths
 
-Each numbered document includes:
+**Core path (sequential):** 01 → 02 → 03 → 04 → 05 → 07 → 08
 
-- **Prerequisites** — Prior documents to complete
-- **Concepts** — What you'll learn
-- **Math** — In-place explanations (dot, cross, lerp, formulas) where relevant
-- **Implementation steps** — Code and Unity actions, ordered so each builds on the previous
-- **Unity setup checklist** — Scene and project requirements
-- **Key takeaways** — Summary
-- **Next** — Link to the following document
+**With animation:** After 03, add 06 (can run in parallel with 04–05).
+
+**Post-processing early:** 08 step 01 can be tried after 01 for a simple full-screen effect; full 08 assumes 07.
+
+---
+
+## Document index
+
+| # | Document | Module |
+|---|----------|--------|
+| 01 | [01 — Fundamentals](01-fundamentals/01-fundamentals.md) | 01 |
+| 02 | [01 — Diffuse Lighting](02-basic-lighting/01-diffuse-lighting.md) | 02 |
+| 03 | [02 — Specular Lighting](02-basic-lighting/02-specular-lighting.md) | 02 |
+| 04 | [01 — Texturing](03-texturing/01-texturing.md) | 03 |
+| 05 | [02 — Normal Mapping](03-texturing/02-normal-mapping.md) | 03 |
+| 06 | [01 — Parallax & Triplanar](04-advanced-texturing/01-parallax-triplanar.md) | 04 |
+| 07 | [01 — Transparency](05-surface-effects/01-transparency.md) | 05 |
+| 08 | [02 — Fresnel & Rim](05-surface-effects/02-fresnel-rim.md) | 05 |
+| 09 | [03 — Toon / Cel Shading](05-surface-effects/03-toon-cel-shading.md) | 05 |
+| 10 | [04 — Dissolve](05-surface-effects/04-dissolve.md) | 05 |
+| 11 | [01 — Vertex Displacement](06-animation/01-vertex-displacement.md) | 06 |
+| 12 | [02 — UV Animation](06-animation/02-uv-animation.md) | 06 |
+| 13 | [01 — PBR](07-production-rendering/01-pbr.md) | 07 |
+| 14 | [02 — Shadows](07-production-rendering/02-shadows.md) | 07 |
+| 15 | [03 — Cubemaps & Environment](07-production-rendering/03-cubemaps-environment.md) | 07 |
+| 16 | [01 — Post-Processing](08-post-processing-advanced/01-post-processing.md) | 08 |
+| 17 | [02 — Advanced](08-post-processing-advanced/02-advanced.md) | 08 |
 
 ---
 

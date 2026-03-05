@@ -1,6 +1,6 @@
-# 13 — Physically Based Rendering (PBR)
+# 01 — Physically Based Rendering (PBR)
 
-**Prerequisites:** [05 — Normal Mapping](05-normal-mapping.md), [08 — Fresnel & Rim](08-fresnel-rim.md). You need normals, view direction, and lighting basics.
+**Prerequisites:** [02 — Normal Mapping](../03-texturing/02-normal-mapping.md), [02 — Fresnel & Rim Lighting](../05-surface-effects/02-fresnel-rim.md). You need normals, view direction, and lighting basics.
 
 **Concepts:** Metallic-roughness workflow, energy conservation, BRDF, URP PBR functions.
 
@@ -113,4 +113,4 @@ For a full implementation, study URP's Lit shader or use `UniversalFragmentPBR`.
 
 ## Next
 
-[14 — Shadows](14-shadows.md) — Receive shadows from lights.
+[02 — Shadows](02-shadows.md) — Receive shadows from lights.

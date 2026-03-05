@@ -1,6 +1,6 @@
-# 10 — Dissolve
+# 04 — Dissolve
 
-**Prerequisites:** [09 — Toon / Cel Shading](09-toon-cel-shading.md) or any shader with texture sampling.
+**Prerequisites:** [03 — Toon / Cel Shading](03-toon-cel-shading.md) or any shader with texture sampling.
 
 **Concepts:** Clip/discard, noise textures, animated cutout, burn edge.
 
@@ -107,4 +107,4 @@ half noise = SAMPLE_TEXTURE2D(_NoiseMap, sampler_NoiseMap, noiseUV).r;
 
 ## Next
 
-[11 — Vertex Displacement](11-vertex-displacement.md) — Animate vertices in the vertex shader.
+[01 — Vertex Displacement](../06-animation/01-vertex-displacement.md) — Animate vertices in the vertex shader.

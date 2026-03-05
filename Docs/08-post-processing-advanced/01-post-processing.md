@@ -1,6 +1,6 @@
-# 16 — Post-Processing
+# 01 — Post-Processing
 
-**Prerequisites:** [01 — Fundamentals](01-fundamentals.md). Understanding of render targets and full-screen passes.
+**Prerequisites:** [01 — Fundamentals](../01-fundamentals/01-fundamentals.md). Understanding of render targets and full-screen passes.
 
 **Concepts:** Blit, render targets, full-screen effects, URP volume framework.
 
@@ -130,4 +130,4 @@ URP's post-processing uses `Volume` components and `VolumeProfile` assets. Effec
 
 ## Next
 
-[17 — Advanced](17-advanced.md) — Multi-pass, stencil, instancing, variants.
+[02 — Advanced](02-advanced.md) — Multi-pass, stencil, instancing, variants.

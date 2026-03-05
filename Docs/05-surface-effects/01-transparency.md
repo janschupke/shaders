@@ -1,6 +1,6 @@
-# 07 — Transparency
+# 01 — Transparency
 
-**Prerequisites:** [06 — Parallax & Triplanar](06-parallax-triplanar.md) or any lit, textured shader.
+**Prerequisites:** [01 — Parallax & Triplanar Mapping](../04-advanced-texturing/01-parallax-triplanar.md) or any lit, textured shader.
 
 **Concepts:** Alpha blend, alpha clip, depth write, render queue, blend modes.
 
@@ -112,4 +112,4 @@ Transparent objects are drawn back-to-front by distance when possible. For compl
 
 ## Next
 
-[08 — Fresnel & Rim](08-fresnel-rim.md) — View-dependent edge lighting.
+[02 — Fresnel & Rim Lighting](02-fresnel-rim.md) — View-dependent edge lighting.

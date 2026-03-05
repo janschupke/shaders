@@ -1,6 +1,6 @@
-# 05 — Normal Mapping
+# 02 — Normal Mapping
 
-**Prerequisites:** [04 — Texturing](04-texturing.md). You need UV sampling and a lit shader.
+**Prerequisites:** [01 — Texturing](01-texturing.md). You need UV sampling and a lit shader.
 
 **Concepts:** Tangent-space normals, TBN matrix, normal map unpacking.
 
@@ -127,4 +127,4 @@ Some meshes lack tangents. Use `#if defined(_NORMALMAP)` and fall back to `IN.no
 
 ## Next
 
-[06 — Parallax & Triplanar](06-parallax-triplanar.md) — Height-based UV offset and UV-less projection.
+[01 — Parallax & Triplanar Mapping](../04-advanced-texturing/01-parallax-triplanar.md) — Height-based UV offset and UV-less projection.

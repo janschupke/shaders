@@ -1,6 +1,6 @@
-# 06 — Parallax & Triplanar Mapping
+# 01 — Parallax & Triplanar Mapping
 
-**Prerequisites:** [05 — Normal Mapping](05-normal-mapping.md). You need height/normal sampling and TBN.
+**Prerequisites:** [02 — Normal Mapping](../03-texturing/02-normal-mapping.md). You need height/normal sampling and TBN.
 
 **Concepts:** Parallax mapping, steep parallax, triplanar projection, UV-less texturing.
 
@@ -117,4 +117,4 @@ For triplanar normals, sample three normal maps (or the same map at pos.zy, pos.
 
 ## Next
 
-[07 — Transparency](07-transparency.md) — Alpha blending and alpha clip.
+[01 — Transparency](../05-surface-effects/01-transparency.md) — Alpha blending and alpha clip.

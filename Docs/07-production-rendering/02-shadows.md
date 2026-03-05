@@ -1,6 +1,6 @@
-# 14 — Shadows
+# 02 — Shadows
 
-**Prerequisites:** [13 — PBR](13-pbr.md) or any lit shader. URP with shadows enabled.
+**Prerequisites:** [01 — PBR](01-pbr.md) or any lit shader. URP with shadows enabled.
 
 **Concepts:** Shadow mapping, shadow sampling, shadow bias, main light shadows.
 
@@ -100,4 +100,4 @@ If you see shadow acne (speckled self-shadowing), adjust the bias in the URP Ass
 
 ## Next
 
-[15 — Cubemaps & Environment](15-cubemaps-environment.md) — Reflections and skybox sampling.
+[03 — Cubemaps & Environment](03-cubemaps-environment.md) — Reflections and skybox sampling.

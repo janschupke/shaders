@@ -1,6 +1,6 @@
-# 17 — Advanced Topics
+# 02 — Advanced Topics
 
-**Prerequisites:** [14 — Shadows](14-shadows.md), [15 — Cubemaps](15-cubemaps-environment.md), [16 — Post-Processing](16-post-processing.md) or any prior shader. Each subsection can be tackled independently.
+**Prerequisites:** [02 — Shadows](../07-production-rendering/02-shadows.md), [03 — Cubemaps & Environment](../07-production-rendering/03-cubemaps-environment.md), [01 — Post-Processing](01-post-processing.md) or any prior shader. Each subsection can be tackled independently.
 
 **Concepts:** Multi-pass, stencil buffer, GPU instancing, shader variants.
 
@@ -137,6 +137,6 @@ The **SRP Batcher** batches draw calls when materials use the same shader and st
 
 ## References
 
-- [terminology.md](terminology.md)
+- [terminology.md](../terminology.md)
 - [Unity Shader Reference](https://docs.unity3d.com/Manual/SL-Reference.html)
 - [URP Lit Shader](https://github.com/Unity-Technologies/Graphics/blob/master/Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader)

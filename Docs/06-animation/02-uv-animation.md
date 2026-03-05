@@ -1,6 +1,6 @@
-# 12 — UV Animation
+# 02 — UV Animation
 
-**Prerequisites:** [04 — Texturing](04-texturing.md). You need UVs and texture sampling.
+**Prerequisites:** [01 — Texturing](../03-texturing/01-texturing.md). You need UVs and texture sampling.
 
 **Concepts:** UV scrolling, UV rotation, animated textures, flow maps.
 
@@ -110,4 +110,4 @@ OUT.uv = IN.uv + uvOffset;
 
 ## Next
 
-[13 — PBR](13-pbr.md) — Physically based rendering.
+[01 — PBR](../07-production-rendering/01-pbr.md) — Physically based rendering.

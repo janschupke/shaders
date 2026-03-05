@@ -1,6 +1,6 @@
-# 09 — Toon / Cel Shading
+# 03 — Toon / Cel Shading
 
-**Prerequisites:** [08 — Fresnel & Rim](08-fresnel-rim.md) or any lit shader.
+**Prerequisites:** [02 — Fresnel & Rim Lighting](02-fresnel-rim.md) or any lit shader.
 
 **Concepts:** Banded lighting, step/floor functions, toon shading.
 
@@ -113,4 +113,4 @@ Or use multiple smoothsteps for each band transition.
 
 ## Next
 
-[10 — Dissolve](10-dissolve.md) — Clip-based dissolve effect.
+[04 — Dissolve](04-dissolve.md) — Clip-based dissolve effect.

@@ -1,4 +1,4 @@
-# 01 — Fundamentals
+# Step 1 — Fundamentals
 
 **Prerequisites:** None. Start here.
 
@@ -192,4 +192,4 @@ When a shader misbehaves, use these techniques:
 
 ## Next
 
-[02 — Diffuse Lighting](02-diffuse-lighting.md) — Use the normal and light direction for Lambert shading.
+[01 — Diffuse Lighting](../02-basic-lighting/01-diffuse-lighting.md) — Use the normal and light direction for Lambert shading.

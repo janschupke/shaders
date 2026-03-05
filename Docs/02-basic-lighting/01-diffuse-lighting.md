@@ -1,6 +1,6 @@
-# 02 — Diffuse Lighting
+# 01 — Diffuse Lighting
 
-**Prerequisites:** [01 — Fundamentals](01-fundamentals.md). You need vertex/fragment structure, normals, and world-space varyings.
+**Prerequisites:** [01 — Fundamentals](../01-fundamentals/01-fundamentals.md). You need vertex/fragment structure, normals, and world-space varyings.
 
 **Concepts:** Lambert diffuse, N·L, directional lights, URP lighting API.
 
@@ -107,4 +107,4 @@ Compare with standard Lambert by toggling (e.g. via a `[Toggle]` property).
 
 ## Next
 
-[03 — Specular Lighting](03-specular-lighting.md) — Add highlights with Blinn-Phong.
+[02 — Specular Lighting](02-specular-lighting.md) — Add highlights with Blinn-Phong.

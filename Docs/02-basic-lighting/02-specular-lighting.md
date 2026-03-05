@@ -1,6 +1,6 @@
-# 03 — Specular Lighting
+# 02 — Specular Lighting
 
-**Prerequisites:** [02 — Diffuse Lighting](02-diffuse-lighting.md). You need Lambert diffuse and URP lighting includes.
+**Prerequisites:** [01 — Diffuse Lighting](01-diffuse-lighting.md). You need Lambert diffuse and URP lighting includes.
 
 **Concepts:** Specular highlights, Blinn-Phong, N·H, shininess/roughness.
 
@@ -119,4 +119,4 @@ Add a `_SpecularStrength` (Range 0–1) and multiply `specular` by it. This lets
 
 ## Next
 
-[04 — Texturing](04-texturing.md) — UV mapping and texture sampling.
+[01 — Texturing](../03-texturing/01-texturing.md) — UV mapping and texture sampling.

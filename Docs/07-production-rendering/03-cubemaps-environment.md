@@ -1,6 +1,6 @@
-# 15 — Cubemaps & Environment
+# 03 — Cubemaps & Environment
 
-**Prerequisites:** [13 — PBR](13-pbr.md) or any shader with view direction and normals.
+**Prerequisites:** [01 — PBR](01-pbr.md) or any shader with view direction and normals.
 
 **Concepts:** Cubemaps, reflection vectors, environment sampling, skybox.
 
@@ -108,4 +108,4 @@ If no reflection probe is set, Unity may use the skybox. Ensure your scene has a
 
 ## Next
 
-[16 — Post-Processing](16-post-processing.md) — Full-screen effects.
+[01 — Post-Processing](../08-post-processing-advanced/01-post-processing.md) — Full-screen effects.
