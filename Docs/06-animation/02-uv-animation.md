@@ -14,6 +14,15 @@
 
 ---
 
+## Practical applications
+
+- **Water, lava** — scroll two layers at different speeds for flowing liquid.
+- **Conveyor belts, treadmills** — horizontal scroll; match speed to gameplay.
+- **Rotating elements** — radar sweeps, loading spinners, magic circles.
+- **Flow maps** — directional distortion for rivers, wind-blown grass, directional currents.
+
+---
+
 ## Implementation steps
 
 ### Step 1: UV scroll

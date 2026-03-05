@@ -14,6 +14,15 @@ The **vertex shader** can modify vertex positions before rasterization. Moving v
 
 ---
 
+## Practical applications
+
+- **Water** — sine waves on a plane; use world-space for tiling across chunks.
+- **Flags, cloth** — wind-like motion; combine multiple frequencies for natural movement.
+- **Terrain** — height-map displacement for dunes, lava fields. Recompute normals for correct lighting.
+- **Organic deformation** — jelly, slime, breathing effects. Low frequency, subtle displacement.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Displace in object space

@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Alpha clip** — foliage, grilles, chain-link, cutout characters. Hard edges, no sorting issues. Use when you need crisp silhouettes.
+- **Alpha blend** — glass, water surface, holograms, smoke. Soft transparency; watch draw order and overlapping.
+- **Additive blend** — particles, lens flares, magic effects. Accumulates light; use for glow that brightens the scene.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Alpha clip (cutout)

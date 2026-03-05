@@ -14,6 +14,15 @@
 
 ---
 
+## Practical applications
+
+- **Grayscale** — flashbacks, death screen, stylized moments. Luminance weights: 0.299R + 0.587G + 0.114B.
+- **Vignette** — focus attention, cinematic feel. Stronger in horror or dramatic scenes.
+- **Color grading** — exposure, contrast, saturation for mood. Warm for sunset, desaturated for bleak.
+- **Bloom** — bright emissive glow; common in fantasy, sci-fi, and stylized games.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Create a simple full-screen shader

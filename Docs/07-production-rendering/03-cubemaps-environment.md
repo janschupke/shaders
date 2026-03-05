@@ -14,6 +14,14 @@ A **cubemap** is a texture with six faces (+X, -X, +Y, -Y, +Z, -Z) representing 
 
 ---
 
+## Practical applications
+
+- **Metallic/glossy surfaces** — cars, mirrors, wet floors. Reflection probe captures the scene; roughness selects mip for blur.
+- **Skybox reflection** — outdoor scenes; sky reflects on water, glass, metal.
+- **Fake reflections** — use a static cubemap for performance when dynamic probes are too costly.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Add a reflection cubemap property

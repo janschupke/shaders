@@ -14,6 +14,15 @@
 
 ---
 
+## Practical applications
+
+- **Anime/cartoon style** — Zelda: Breath of the Wild, Genshin Impact, Guilty Gear. Discrete bands instead of smooth gradients.
+- **Comic/cel look** — 2–4 bands for strong stylization; more bands for a softer toon feel.
+- **Outline (inverted hull)** — character outlines, UI highlights, emphasis. Scale mesh along normals, cull front, dark color.
+- **Combine with rim** — full stylized character pipeline: banded diffuse + banded specular + rim.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Band the diffuse term

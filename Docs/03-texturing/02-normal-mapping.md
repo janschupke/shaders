@@ -14,6 +14,14 @@ A **normal map** stores perturbed surface normals in a texture. Lighting uses th
 
 ---
 
+## Practical applications
+
+- **Surface detail without geometry** — bricks, tiles, scratches, fabric weave. One quad can look like detailed relief.
+- **Characters** — wrinkles, pores, armor plates. Normal maps are standard in character pipelines.
+- **Environment art** — walls, props, terrain. Combine with tiling for efficient large surfaces.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Add tangent and normal to attributes

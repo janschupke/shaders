@@ -6,6 +6,15 @@
 
 ---
 
+## Practical applications (by topic)
+
+- **Stencil** — object outlines, UI masking, portal effects. Write to stencil in one pass; read in another to restrict where to draw.
+- **GPU instancing** — crowds, vegetation, bullets, debris. One draw call for many copies; essential for performance with repeated meshes.
+- **Shader variants** — feature toggles (rim, detail map) without separate shaders. `shader_feature` strips unused; `multi_compile` for required combinations (shadows, fog).
+- **SRP Batcher** — fewer draw call overhead when many materials share a shader. Put all material properties in `CBUFFER`; avoid per-draw constant changes.
+
+---
+
 ## 1. Multi-pass & stencil
 
 ### What you'll learn

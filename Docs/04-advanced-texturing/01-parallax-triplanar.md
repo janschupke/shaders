@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Parallax** — brick walls, floor tiles, rocky terrain. Adds apparent depth when viewed at an angle; use steep parallax for stronger effect.
+- **Triplanar** — voxel worlds, procedural meshes, terrain without UVs. Projects texture from X/Y/Z axes; no seams. Ideal for Minecraft-style blocks, sculpted terrain, or any mesh where UV unwrapping is impractical.
+- **Combined** — triplanar base + parallax on one axis for terrain with height variation.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Parallax — add height map and view in tangent space

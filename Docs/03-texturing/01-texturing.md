@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Tiling** — floors, walls, terrain. Repeat a small texture to cover large areas without huge assets.
+- **Detail maps** — second texture at higher frequency for close-up detail (e.g. scratches on metal).
+- **Alpha cutout** — foliage, grilles, chain-link fences. Use `clip()` for hard edges when you don't need soft transparency.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Add UV to attributes and varyings

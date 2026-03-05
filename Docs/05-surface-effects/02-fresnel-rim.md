@@ -14,6 +14,15 @@ The **Fresnel** effect describes how surfaces reflect more at grazing angles (ed
 
 ---
 
+## Practical applications
+
+- **Character rim** — separates characters from background; common in action games and anime-style rendering.
+- **Glass and water** — stronger reflection at grazing angles; combine with transparency for realistic edges.
+- **Sci-fi and holograms** — blue/cyan rim for tech surfaces, force fields, holographic UI.
+- **Stylized materials** — toon shaders often add a rim for definition.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Compute N·V in the fragment shader

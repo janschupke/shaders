@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Glossy materials** — plastic, metal, wet surfaces, eyes. Lower shininess = broad highlight (rough plastic); higher = tight highlight (polished metal).
+- **Point/spot lights** — flashlights, lamps, candles. Use additional lights with attenuation for localized highlights.
+- **Stylized vs realistic** — Blinn-Phong is cheap; PBR (later) gives more accurate specular for production assets.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Start from diffuse shader

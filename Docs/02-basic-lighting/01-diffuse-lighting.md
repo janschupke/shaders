@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Every lit 3D scene** — diffuse is the base for matte surfaces (walls, fabric, wood).
+- **Half-Lambert** — softer shadows for stylized games (e.g. Team Fortress 2) or when you want to avoid pure black.
+- **Ambient** — prevents completely dark areas; tune color for mood (blue for night, warm for interiors).
+
+---
+
 ## Implementation steps
 
 ### Step 1: Start from the fundamentals shader

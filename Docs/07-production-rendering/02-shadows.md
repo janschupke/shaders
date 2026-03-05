@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Directional light shadows** — sun/moon; primary source of depth and grounding in outdoor scenes.
+- **Point/spot shadows** — flashlights, street lamps. More expensive; use sparingly for key lights.
+- **Shadow acne** — adjust bias when you see speckled self-shadowing. Cascade resolution affects quality at distance.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Enable shadows in URP

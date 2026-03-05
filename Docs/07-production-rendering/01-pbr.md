@@ -14,6 +14,14 @@
 
 ---
 
+## Practical applications
+
+- **Realistic materials** — metals, plastics, stone, skin. PBR is the standard for photorealistic games and film.
+- **Metallic vs dielectric** — metallic = 1 for gold, steel, chrome; 0 for wood, fabric, ceramic. Smoothness controls gloss.
+- **When to skip PBR** — stylized games often use Blinn-Phong or toon; PBR adds cost. Use PBR when consistency with real-world materials matters.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Add PBR properties

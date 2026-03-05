@@ -14,6 +14,15 @@ A **dissolve** effect makes a surface appear to burn or disintegrate. A **noise 
 
 ---
 
+## Practical applications
+
+- **Death/disintegration VFX** — enemies dissolving, objects breaking apart. Animate threshold 0→1 from script.
+- **Spawn/teleport** — reverse dissolve (1→0) for materializing effects.
+- **Burn edge** — ember glow, magic disintegration. Orange/red for fire; cyan for ice or tech.
+- **Level transitions** — dissolve the scene to black/white for cutscenes or loading.
+
+---
+
 ## Implementation steps
 
 ### Step 1: Sample a noise texture
