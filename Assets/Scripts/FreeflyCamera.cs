@@ -70,12 +70,6 @@ public class FreeflyCamera : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-
         float dt = Time.deltaTime;
         float speed = moveSpeed * (IsSprinting() ? sprintMultiplier : 1f);
 
