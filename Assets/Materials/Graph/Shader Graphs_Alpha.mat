@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7035475461879273736
+--- !u!114 &-2850803689123804231
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Emission
-  m_Shader: {fileID: -6465566751694194690, guid: 2d4b3e010add241fbbb680d3270a6352, type: 3}
+  m_Name: Shader Graphs_Alpha
+  m_Shader: {fileID: -6465566751694194690, guid: f8b7c97f874524b7eaef9ffe63242d58, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -53,8 +53,6 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors:
-    - _Base_Color: {r: 0.5, g: 0.101415075, b: 0.101415075, a: 1}
-    - _Emission: {r: 0, g: 0.00621647, b: 0.9607843, a: 1}
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
